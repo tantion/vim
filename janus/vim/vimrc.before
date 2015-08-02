@@ -1,0 +1,4 @@
+" Default
+let mapleader = ","
+set mouse=a                    " Enable mouse use in all modes
+set relativenumber

@@ -1,0 +1,41 @@
+
+" Base
+color solarized
+
+" Key Mappings fun
+fun! TabIndent4Spaces()
+    set shiftwidth=4            " Use indents of 4 spaces
+    set tabstop=4               " An indentation every four columns
+    set softtabstop=4           " Let backspace delete indent
+endfun
+
+fun! TabIndent2Spaces()
+    set shiftwidth=2            " Use indents of 2 spaces
+    set tabstop=2               " An indentation every two columns
+    set softtabstop=2           " Let backspace delete indent
+endfun
+
+" Key (re)Mappings
+map <C-n> :NERDTreeToggle<CR>
+
+" Tab indent 2 spaces
+nmap <leader>2 :call TabIndent2Spaces()<CR>
+" Tab indent 4 spaces
+nmap <leader>4 :call TabIndent4Spaces()<CR>
+
+" Nohightlight
+nmap <leader><space> :noh<CR>
+" TrimSpaces
+nmap <leader>t :%s/\s\+$//e<CR>
+" PasteToggle
+nmap <leader>p :set paste<CR>
+nmap <leader>P :set nopaste<CR>
+" mouse a
+nmap <leader>m :set mouse=<CR>
+nmap <leader>M :set mouse=a<CR>
+" relativenumber
+nmap <leader>r :set relativenumber<CR>
+nmap <leader>R :set norelativenumber<CR>
+" JSHint
+nmap <Leader>j :JSHint<CR>
+
