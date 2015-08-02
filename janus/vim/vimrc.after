@@ -16,7 +16,10 @@ fun! TabIndent2Spaces()
 endfun
 
 " Key (re)Mappings
-map <C-n> :NERDTreeToggle<CR>
+" NERDTree
+nmap <C-n> :NERDTreeToggle<CR>
+" Ack
+nmap <C-a> :Ack 
 
 " Tab indent 2 spaces
 nmap <leader>2 :call TabIndent2Spaces()<CR>
