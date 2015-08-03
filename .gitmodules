@@ -230,3 +230,6 @@
 [submodule "janus/vim/tools/vim-gitgutter"]
 	path = janus/vim/tools/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "janus/vim/tools/jshint2"]
+	path = janus/vim/tools/jshint2
+	url = https://github.com/Shutnik/jshint2.vim.git
