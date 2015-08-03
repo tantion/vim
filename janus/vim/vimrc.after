@@ -1,6 +1,7 @@
 
 " Base
 color solarized
+"color molokai
 
 " Key Mappings fun
 fun! TabIndent4Spaces()

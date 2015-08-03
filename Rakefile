@@ -7,7 +7,7 @@ include Janus
 
 desc "link ViM configuration files."
 task :link_vim_conf_files do
-  %w[ vimrc gvimrc vimrc.before vimrc.after ].each do |file|
+  %w[ vimrc gvimrc vimrc.before vimrc.after gvimrc.after ].each do |file|
     dest = expand("~/.#{file}")
     unless File.exist?(dest)
       require 'rbconfig'
