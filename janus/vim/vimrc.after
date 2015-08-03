@@ -46,4 +46,6 @@ nmap <leader>r :set relativenumber<CR>
 nmap <leader>R :set norelativenumber<CR>
 " JSHint
 nmap <Leader>j :JSHint<CR>
+nmap <Leader>jn :lnext<CR>
+nmap <Leader>jp :lprevious<CR>
 

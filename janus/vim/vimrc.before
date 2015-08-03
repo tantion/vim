@@ -6,5 +6,8 @@ set relativenumber
 " CtrlP unky
 let g:ctrlp_funky_matchtype = 'path'
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+
 " Disable Plugin
 call janus#disable_plugin('vim-trailing-whitespace')

@@ -239,3 +239,6 @@
 [submodule "janus/vim/tools/ctrlp-funky"]
 	path = janus/vim/tools/ctrlp-funky
 	url = https://github.com/tacahiroy/ctrlp-funky.git
+[submodule "janus/vim/tools/YouCompleteMe"]
+	path = janus/vim/tools/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
