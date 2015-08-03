@@ -20,7 +20,11 @@ endfun
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 " Ack
-nmap <C-a> :Ack 
+nmap <leader>fg :Ack .
+" CtrlP
+nmap <leader>ff :CtrlP .<CR>
+" CtrlP funky
+nmap <leader>fu :CtrlPFunky<CR>
 
 " Tab indent 2 spaces
 nmap <leader>2 :call TabIndent2Spaces()<CR>

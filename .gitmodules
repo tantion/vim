@@ -233,3 +233,9 @@
 [submodule "janus/vim/tools/jshint2"]
 	path = janus/vim/tools/jshint2
 	url = https://github.com/Shutnik/jshint2.vim.git
+[submodule "janus/vim/tools/vim-airline"]
+	path = janus/vim/tools/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "janus/vim/tools/ctrlp-funky"]
+	path = janus/vim/tools/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky.git

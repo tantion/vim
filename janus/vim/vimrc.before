@@ -2,3 +2,9 @@
 let mapleader = ","
 set mouse=a                    " Enable mouse use in all modes
 set relativenumber
+
+" CtrlP unky
+let g:ctrlp_funky_matchtype = 'path'
+
+" Disable Plugin
+call janus#disable_plugin('vim-trailing-whitespace')
