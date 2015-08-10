@@ -35,6 +35,10 @@ nmap <leader>2 :call TabIndent2Spaces()<CR>
 " Tab indent 4 spaces
 nmap <leader>4 :call TabIndent4Spaces()<CR>
 
+" System copy
+" "+y
+" "+p
+
 " Nohightlight
 nmap <leader><space> :noh<CR>
 " TrimSpaces
