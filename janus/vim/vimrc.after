@@ -16,9 +16,13 @@ fun! TabIndent2Spaces()
     set softtabstop=2           " Let backspace delete indent
 endfun
 
+:call TabIndent4Spaces()
+
 " Key (re)Mappings
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
+" UtilSnipt
+nmap <C-e> :UltiSnipsEdit<CR>
 " Ack
 nmap <leader>fg :Ack .
 " CtrlP
