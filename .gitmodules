@@ -245,3 +245,6 @@
 [submodule "janus/vim/tools/ultisnips"]
 	path = janus/vim/tools/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "janus/vim/tools/emmet-vim"]
+	path = janus/vim/tools/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
