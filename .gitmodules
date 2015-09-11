@@ -248,3 +248,6 @@
 [submodule "janus/vim/tools/emmet-vim"]
 	path = janus/vim/tools/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "janus/vim/tools/yankring"]
+	path = janus/vim/tools/yankring
+	url = https://github.com/vim-scripts/YankRing.vim.git
