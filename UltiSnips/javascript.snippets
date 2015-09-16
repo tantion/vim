@@ -1,9 +1,134 @@
-priority -50
+priority -10
 
 ###########################################################################
 #                            Javascript Snippets                            #
 ###########################################################################
+snippet us "use strict"
+'use strict';
+endsnippet
 
+snippet jg "jshint global comment"
+/* global ${1:global_name}:true */
+endsnippet
+
+snippet cla "console.log(arguments)"
+console.log(arguments);
+endsnippet
+
+snippet uto "underscore.js template out"
+<%- item.${1:name} %>
+endsnippet
+
+snippet utc "underscore.js template code"
+<% ${1:code} %>
+endsnippet
+
+snippet utif "underscore.js template if"
+<% if (${1:condition}) { %>
+	${VISUAL}$0
+<% } else { %>
+<% } %>
+endsnippet
+
+###########################################################################
+#                            Wa Snippets                            #
+###########################################################################
+
+snippet wrv "wa reuire view components module"
+var ${1:view_name}View = Wa.require('Views.Components.$1');
+endsnippet
+
+snippet wrc "wa reuire components module"
+var ${1:component_name} = Wa.require('components.$1');
+endsnippet
+
+snippet wm "wa module"
+//
+// ${1:module_name}
+//
+Wa.define('$1', function () {
+	'use strict';
+
+	var $1 = {
+		${VISUAL}$0
+	};
+
+	return $1;
+});
+endsnippet
+
+snippet wv "wa view components module"
+//
+// ${1:module_name}
+//
+Wa.define('Views.Components.$1', function () {
+	'use strict';
+
+	var $1View = Backbone.View.extend({
+		initialize: function (options) {
+			this.options = options;
+			this.model = new $1Model(options.data);
+
+			${VISUAL}$0
+
+			return this;
+		},
+		render: function () {
+		
+			return this;
+		}
+	});
+
+	return $1View;
+});
+endsnippet
+
+###########################################################################
+#                            Backbone Snippets                            #
+###########################################################################
+
+snippet btj "backbone model toJSON"
+Backbone.Model.prototype.toJSON.apply(this, arguments);
+endsnippet
+
+snippet bv "backbone view template"
+var ${1:view_name}View = Backbone.View.extend({
+	initialize: function (options) {
+		this.options = options;
+		this.model = new ${2:model_name}Model(options.data);
+
+		${VISUAL}$0
+
+		return this;
+	},
+	render: function () {
+	
+		return this;
+	}
+});
+endsnippet
+
+snippet bm "backbone model template"
+var ${1:model_name}Model = Backbone.Model.extend({
+	defaults: {
+		${VISUAL}$0
+	},
+	initialize: function (data) {
+
+		return this;
+	}
+});
+endsnippet
+
+snippet bc "backbone collection template"
+var ${1:collection_name}Collection = Backbone.Collection.extend({
+	model: ${2:model_name}Model,
+	initialize: function (data) {
+
+		return this;
+	}
+});
+endsnippet
 
 
 # vim:ft=snippets:
