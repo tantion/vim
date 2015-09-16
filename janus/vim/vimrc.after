@@ -3,6 +3,12 @@
 color solarized
 "color molokai
 
+" code folder
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
 " Key Mappings fun
 fun! TabIndent4Spaces()
     set shiftwidth=4            " Use indents of 4 spaces
@@ -21,14 +27,28 @@ endfun
 " Key (re)Mappings
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
+" YankRing
+nmap <C-h> :YRShow<CR>
 " UtilSnipt
 nmap <C-e> :UltiSnipsEdit<CR>
 " Ack
-nmap <leader>fg :Ack .
+nmap <leader>fg :Ack 
 " CtrlP
 nmap <leader>ff :CtrlP .<CR>
 " CtrlP funky
 nmap <leader>fu :CtrlPFunky<CR>
+" code folder
+nmap <leader>fm :set foldmethod=marker<CR>
+nmap <leader>fi :set foldmethod=indent<CR>
+
+" alias
+nmap <leader>ea :tabnew ~/.vimrc.after<CR>
+nmap <leader>eb :tabnew ~/.vimrc.before<CR>
+nmap <leader>sv :so $MYVIMRC<CR>
+nmap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nmap <leader>pd :!open %:p:h<CR>
+nmap <leader>mvim :!mvim %<CR>
+
 
 " Tab indent 2 spaces
 nmap <leader>2 :call TabIndent2Spaces()<CR>
@@ -56,4 +76,3 @@ nmap <leader>R :set norelativenumber<CR>
 nmap <Leader>j :JSHint<CR>
 nmap <Leader>jn :lnext<CR>
 nmap <Leader>jp :lprevious<CR>
-
