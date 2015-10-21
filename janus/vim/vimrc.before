@@ -3,6 +3,9 @@ let mapleader = ","
 set mouse=a                    " Enable mouse use in all modes
 set relativenumber
 
+" vim-ctrlp-plugin-case-insensitive-search
+set ignorecase
+
 " CtrlP unky
 let g:ctrlp_funky_matchtype = 'path'
 " Airline

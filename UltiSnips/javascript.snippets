@@ -3,24 +3,33 @@ priority -10
 ###########################################################################
 #                            Javascript Snippets                            #
 ###########################################################################
+
+snippet ct "console.trace(value)"
+console.trace(${1:"value"});${VISUAL}$0
+endsnippet
+
+snippet tt "that = this"
+var that = this;${VISUAL}$0
+endsnippet
+
 snippet us "use strict"
-'use strict';
+'use strict';${VISUAL}$0
 endsnippet
 
 snippet jg "jshint global comment"
-/* global ${1:global_name}:true */
+/* global ${1:global_name}:true */${VISUAL}$0
 endsnippet
 
 snippet cla "console.log(arguments)"
-console.log(arguments);
+console.log(arguments);${VISUAL}$0
 endsnippet
 
 snippet uto "underscore.js template out"
-<%- item.${1:name} %>
+<%- item.${1:name} %>${VISUAL}$0
 endsnippet
 
 snippet utc "underscore.js template code"
-<% ${1:code} %>
+<% ${1:code} %>${VISUAL}$0
 endsnippet
 
 snippet utif "underscore.js template if"
@@ -30,16 +39,31 @@ snippet utif "underscore.js template if"
 <% } %>
 endsnippet
 
+snippet ut "underscore.js template"
+${1:template}: _.template([
+	${VISUAL}$0
+].join(' ')),
+endsnippet
+
 ###########################################################################
 #                            Wa Snippets                            #
 ###########################################################################
 
+snippet wfg "wa form group"
+'<div class="form-group">',
+	'<label class="col-sm-2 control-label"><i class="wa-form-marker-required">*</i>${1:label_name}</label>',
+	'<div class="col-sm-8">',
+		'<input type="text" name="name" autocomplete="off" required value="<%- item.name %>" class="form-control" placeholder="">',
+	'</div>',
+'</div>',
+endsnippet
+
 snippet wrv "wa reuire view components module"
-var ${1:view_name}View = Wa.require('Views.Components.$1');
+var ${1:view_name}View = Wa.require('Views.Components.$1');${VISUAL}$0
 endsnippet
 
 snippet wrc "wa reuire components module"
-var ${1:component_name} = Wa.require('components.$1');
+var ${1:component_name} = Wa.require('components.$1');${VISUAL}$0
 endsnippet
 
 snippet wm "wa module"
@@ -54,6 +78,21 @@ Wa.define('$1', function () {
 	};
 
 	return $1;
+});
+endsnippet
+
+snippet wmv "wa module view"
+//
+// ${1:module_name}
+//
+Wa.define('Views.Components.$1', function () {
+	'use strict';
+
+	var $1View = {
+		${VISUAL}$0
+	};
+
+	return $1View;
 });
 endsnippet
 
@@ -93,9 +132,20 @@ endsnippet
 
 snippet bv "backbone view template"
 var ${1:view_name}View = Backbone.View.extend({
+	el: '${2:elem}',
+
+	template: _.template([
+	
+	].join(' ')),
+
+	events: {
+	
+	},
+	
 	initialize: function (options) {
+		options = options || {};
 		this.options = options;
-		this.model = new ${2:model_name}Model(options.data);
+		this.model = new $1Model(options.data);
 
 		${VISUAL}$0
 
@@ -113,6 +163,42 @@ var ${1:model_name}Model = Backbone.Model.extend({
 	defaults: {
 		${VISUAL}$0
 	},
+
+	initialize: function (data) {
+
+		return this;
+	},
+
+	toJSON: function () {
+		var json = Backbone.Model.prototype.toJSON.apply(this, arguments);
+
+		return json;
+	},
+
+	save: function () {
+		var data = this.toJSON();
+		var url = '';
+
+		if (data.id) {
+			url = '';
+		}
+
+		return http.ajax({
+			url: url,
+			type: 'POST',
+			data: JSON.stringify(data)
+		});
+
+	}
+});
+endsnippet
+
+snippet bms "backbone model simple template"
+var ${1:model_name}Model = Backbone.Model.extend({
+	defaults: {
+		${VISUAL}$0
+	},
+
 	initialize: function (data) {
 
 		return this;
@@ -122,7 +208,7 @@ endsnippet
 
 snippet bc "backbone collection template"
 var ${1:collection_name}Collection = Backbone.Collection.extend({
-	model: ${2:model_name}Model,
+	model: $1Model,
 	initialize: function (data) {
 
 		return this;

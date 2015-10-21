@@ -28,7 +28,7 @@ endfun
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 " YankRing
-nmap <C-h> :YRShow<CR>
+nmap <C-p> :YRShow<CR>
 " UtilSnipt
 nmap <C-e> :UltiSnipsEdit<CR>
 " Ack
@@ -40,6 +40,8 @@ nmap <leader>fu :CtrlPFunky<CR>
 " code folder
 nmap <leader>fm :set foldmethod=marker<CR>
 nmap <leader>fi :set foldmethod=indent<CR>
+" Gundo
+nmap <C-u> :GundoToggle<CR>
 
 " alias
 nmap <leader>ea :tabnew ~/.vimrc.after<CR>
@@ -48,7 +50,6 @@ nmap <leader>sv :so $MYVIMRC<CR>
 nmap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nmap <leader>pd :!open %:p:h<CR>
 nmap <leader>mvim :!mvim %<CR>
-
 
 " Tab indent 2 spaces
 nmap <leader>2 :call TabIndent2Spaces()<CR>
