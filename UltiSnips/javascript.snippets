@@ -32,6 +32,13 @@ snippet utc "underscore.js template code"
 <% ${1:code} %>${VISUAL}$0
 endsnippet
 
+snippet ute "underscore.js template each"
+<% _.each(${1:items}, function (${2:item}) { %>
+	${VISUAL}$0
+<% }); %>
+endsnippet
+
+
 snippet utif "underscore.js template if"
 <% if (${1:condition}) { %>
 	${VISUAL}$0
@@ -105,20 +112,76 @@ Wa.define('Views.Components.$1', function () {
 
 	var $1View = Backbone.View.extend({
 		initialize: function (options) {
+			options = options || {};
+
 			this.options = options;
 			this.model = new $1Model(options.data);
-
-			${VISUAL}$0
-
+${VISUAL}$0
 			return this;
 		},
 		render: function () {
-		
+
 			return this;
 		}
 	});
 
 	return $1View;
+});
+endsnippet
+
+snippet wvbm "wa view backbone module"
+//
+// ${1:module_name}
+// ${2:module_desc}
+//
+Wa.define('Views.Components.$1', function () {
+    'use strict';
+
+    var $1Model = Backbone.Model.extend({
+        defaults: {
+
+        },
+
+        initialize: function (data) {
+
+            return this;
+        }
+    });
+
+    var $1Collection = Backbone.Collection.extend({
+        model: $1Model,
+
+        initialize: function (data) {
+
+            return this;
+        }
+    });
+
+    var $1View = Backbone.View.extend({
+        template: _.template([
+
+        ].join(' ')),
+
+        events: {
+
+        },
+
+        initialize: function (options) {
+            options = options || {};
+
+            this.options = options;
+            this.collection = new $1Collection();
+            this.collection.url = options.url;
+
+            return this;
+        },
+        render: function () {
+
+            return this;
+        }
+    });
+
+    return $1View;
 });
 endsnippet
 
@@ -135,24 +198,23 @@ var ${1:view_name}View = Backbone.View.extend({
 	el: '${2:elem}',
 
 	template: _.template([
-	
+
 	].join(' ')),
 
 	events: {
-	
+
 	},
-	
+
 	initialize: function (options) {
 		options = options || {};
+
 		this.options = options;
 		this.model = new $1Model(options.data);
-
-		${VISUAL}$0
-
+${VISUAL}$0
 		return this;
 	},
 	render: function () {
-	
+
 		return this;
 	}
 });
@@ -209,6 +271,7 @@ endsnippet
 snippet bc "backbone collection template"
 var ${1:collection_name}Collection = Backbone.Collection.extend({
 	model: $1Model,
+
 	initialize: function (data) {
 
 		return this;

@@ -251,3 +251,6 @@
 [submodule "janus/vim/tools/yankring"]
 	path = janus/vim/tools/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "janus/vim/tools/taglist"]
+	path = janus/vim/tools/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git

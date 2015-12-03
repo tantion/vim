@@ -26,5 +26,11 @@ let g:ycm_key_invoke_completion = '<C-i>'
 let g:yankring_replace_n_pkey = '<c-h>'
 let g:yankring_replace_n_nkey = '<c-l>'
 
+" multiple-cursors
+let g:multi_cursor_next_key='<C-g>'
+let g:multi_cursor_prev_key='<C-a>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
 " Disable Plugin
 call janus#disable_plugin('vim-trailing-whitespace')
