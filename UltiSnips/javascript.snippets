@@ -65,12 +65,20 @@ snippet wfg "wa form group"
 '</div>',
 endsnippet
 
+snippet wct "wa current target"
+var $elem = $(e.currentTarget);
+endsnippet
+
 snippet wrv "wa reuire view components module"
 var ${1:view_name}View = Wa.require('Views.Components.$1');${VISUAL}$0
 endsnippet
 
 snippet wrc "wa reuire components module"
 var ${1:component_name} = Wa.require('components.$1');${VISUAL}$0
+endsnippet
+
+snippet wrm "wa reuire Model components"
+var ${1:component_name} = Wa.require('Models.$1');${VISUAL}$0
 endsnippet
 
 snippet wm "wa module"
@@ -91,6 +99,7 @@ endsnippet
 snippet wmv "wa module view"
 //
 // ${1:module_name}
+// ${2:description}
 //
 Wa.define('Views.Components.$1', function () {
 	'use strict';
@@ -195,8 +204,6 @@ endsnippet
 
 snippet bv "backbone view template"
 var ${1:view_name}View = Backbone.View.extend({
-	el: '${2:elem}',
-
 	template: _.template([
 
 	].join(' ')),

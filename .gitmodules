@@ -254,3 +254,6 @@
 [submodule "janus/vim/tools/taglist"]
 	path = janus/vim/tools/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "janus/vim/langs/jade"]
+	path = janus/vim/langs/jade
+	url = https://github.com/digitaltoad/vim-jade.git
